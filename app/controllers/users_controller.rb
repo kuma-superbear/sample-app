@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     #@user.email = params[:user][email]
     #params[:user][password]のこと
     if @user.save # => Validation
+      log_in @user
       #Sucess
       #redirect_to users_path(@user.id)
       #redirect_to users_path(@user) 
