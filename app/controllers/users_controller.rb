@@ -10,8 +10,8 @@ class UsersController < ApplicationController
 
   #GET /users/:id
   def show
-    @user = User.first
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
     # =>app/views/users/show.html.erb
     # debugger
   end
